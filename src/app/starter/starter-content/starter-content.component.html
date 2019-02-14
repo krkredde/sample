@@ -1,0 +1,89 @@
+<div class="content-wrapper">
+
+  <!-- Top Receiveres of Month Headiing -->
+
+  <div class="onoffswitch3">
+      <input type="checkbox" name="onoffswitch3" class="onoffswitch3-checkbox" id="myonoffswitch3" checked>
+      <label class="onoffswitch3-label" for="myonoffswitch3">
+          <span class="onoffswitch3-inner">
+              <span class="onoffswitch3-active">
+                  <marquee class="scroll-text"> <span class="glyphicon glyphicon-star"></span>Top Award Receivers Of The Month: Ravi  <span class="glyphicon glyphicon-star"></span> Top Award Senders Of the Year: RRR<span class="glyphicon glyphicon-star"></span></marquee>
+                  <span class="onoffswitch3-switch">TOP AWARDEES <span class="glyphicon glyphicon-remove"></span></span>
+              </span>
+              <span class="onoffswitch3-inactive"><span class="onoffswitch3-switch">SHOW BREAKING NEWS</span></span>
+          </span>
+      </label>
+  </div>  
+
+  <br>
+  <section class="content">
+
+    <!--Badges & Recognize Forms-->
+    <div class="row" style="margin-left: 319px; margin-right: -223px;" >
+
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-yellow" style="height: 100px;">
+              <div class="inner">
+              <p>Badges</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-star"></i>
+             </div> 
+              <a routerLink="/starter/badges" routerLinkActive="active" class="small-box-footer" style="margin-top: 22px">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+        
+          <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-green" style="height: 100px;">
+              <div class="inner">
+            <p>Nominate Here</p> 
+          </div>
+           <div class="icon">
+              <i class="fa fa-trophy"></i>
+           </div> 
+          <a routerLink="/starter/nominate-someone" routerLinkActive="active" class="small-box-footer" style="margin-top: 22px">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+      </div> 
+        
+      </div>  
+ </section>
+            
+                     <h3 class="h3" style="margin-top: -100px;">Recent Appreciation</h3>
+                     <div class="row">
+                         <div class="col-md-12">
+                             <div id="news-slider5" class="owl-carousel">
+                                 <div class="post-slide5" *ngFor="let item of appreciations;let i = index">
+                                     <div class="post-img">
+                                         <!-- <img src="http://bestjquery.com/tutorial/news-slider/demo30/images/img-1.jpg" alt=""> -->
+                                         
+                                         <div class="category">HTML</div>
+                                     </div>
+                                     
+                                     <div class="post-review">
+                                        <!-- <i class="fa fa-ellipsis-v" aria-hidden="true"></i> -->
+                                         <h3 class="post-title"><a href="#">{{item.recognizeInput}} was recognized for '{{item.category}}'<br>By {{item.approver}} on {{item.date}}</a></h3>
+                                         <p class="post-description">
+                                            {{item.message}}
+                                         </p>
+                                         <div class="post-bar">
+                                             <span><i class="fa fa-user"></i> <a href="#">{{item.approver}}</a></span>
+                                             <span class="comments"><i class="fa fa-comments"></i> <a href="#">2 Comments</a></span>
+                                         </div>
+                                     </div>
+                                     <button (click)="deleteAppreciations(i);">
+                                         delete
+                                     </button>
+                                 </div>
+                  
+                                <div class="post-slide5" *ngIf="appreciations.length == 0">
+                                    No appreciations available.
+                                </div>
+                 
+                             </div>
+                         </div>
+                     </div>
+
+  </div>
+
+
+
